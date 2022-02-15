@@ -18,6 +18,11 @@ public struct Solar {
         return radians * 180 / Double.pi
     }
     
+    // Declare public init function to avoid "initializer is inaccessible
+    // due to 'internal' protection level"
+    public init() {
+    }
+
     public func gregorian2jdn(year:Int, month:Int, day:Int) -> Int {
         return  Int((1461 * (year + 4800 + Int((month - 14)/12)))/4) +
                 Int((367 * (month - 2 - 12 * (Int((month - 14)/12))))/12) -
